@@ -59,13 +59,13 @@ getmysql ()
 }
 
 # 32-bit MySQL
-mysqlfolder=mysql-5.5
+mysqlfolder=mysql-5.7
 if [ $ismac -eq 1 ]; then
   mysqlver=mysql-5.5.28-osx10.5-x86
   mysqlurl=https://cdn.mysql.com/archives/mysql-5.5/$mysqlver.$archive_ext
 elif [ $iswin -eq 1 ]; then
-  mysqlver=mysql-5.5.62-win32
-  mysqlurl=https://cdn.mysql.com/archives/mysql-5.5/$mysqlver.$archive_ext
+  mysqlver=mysql-5.7.44-win32
+  mysqlurl=https://cdn.mysql.com/archives/mysql-5.7/$mysqlver.$archive_ext
   # The folder in the zip archive does not contain the substring "-noinstall", so strip it
   mysqlver=${mysqlver/-noinstall}
 else
@@ -77,13 +77,13 @@ if [ $download_mysql -eq 1 ]; then
 fi
 
 # 64-bit MySQL
-mysqlfolder=mysql-5.5-x86_64
+mysqlfolder=mysql-5.7-x86_64
 if [ $ismac -eq 1 ]; then
   mysqlver=mysql-5.5.28-osx10.5-x86_64
   mysqlurl=https://cdn.mysql.com/archives/mysql-5.5/$mysqlver.$archive_ext
 elif [ $iswin -eq 1 ]; then
-  mysqlver=mysql-5.5.62-winx64
-  mysqlurl=https://cdn.mysql.com/archives/mysql-5.5/$mysqlver.$archive_ext
+  mysqlver=mysql-5.7.44-winx64
+  mysqlurl=https://cdn.mysql.com/archives/mysql-5.7/$mysqlver.$archive_ext
 else
   mysqlver=mysql-5.7.44-linux-glibc2.12-x86_64
   mysqlurl=https://cdn.mysql.com/archives/mysql-5.7/$mysqlver.$archive_ext
@@ -115,7 +115,7 @@ checkout ()
   fi
 }
 
-name=mmsource-1.12
+name=mmsource-2.0
 branch=master
 repo="https://github.com/alliedmodders/metamod-source"
 origin=
@@ -204,9 +204,9 @@ if [ $? -eq 1 ]; then
     fi
   fi
 
-  repo="https://github.com/alliedmodders/ambuild"
+  repo="https://github.com/accelerator74/ambuild"
   origin=
-  branch=master
+  branch=nog3
   name=ambuild
   checkout
 
